@@ -7,9 +7,9 @@ export const schema = buildSchema(`
       id: Int!
       name: String!
       price: Int!
-      createAt: String!
+      createdAt: String!
       category: Category!
-      categoryID: Int!
+      categoryId: Int!
       stock: Int!
     }
 
@@ -20,14 +20,14 @@ export const schema = buildSchema(`
     }
 
     type Query {
-      products(price: Int, categoryID: Int): [Product!]!
+      products(price: Int, categoryId: Int): [Product!]!
       categories: [Category!]!
       product(id: Int!): Product!
       category(id: Int!): Category!
     }
 
     type Mutation {
-      createProduct(name: String!, price: Int!, categoryID: Int!, stock: Int!): Product!
+      createProduct(name: String!, price: Int!, categoryId: Int!, stock: Int!): Product!
       createCategory(name: String!): Category!
       deleteProduct(id: Int!): Product!
       deleteCategory(id: Int!): Category!

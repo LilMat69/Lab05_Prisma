@@ -14,7 +14,7 @@ export const root = {
         throw new Error('Failed to delete a Category with id ${id}: ${Error}')
       }
     },
-    products: async ({ price, categoryID }) => {
+    products: async ({ price, categoryId }) => {
 
       let whereClause = {}
 
@@ -27,11 +27,11 @@ export const root = {
         }
       }
 
-      if (categoryID !== undefined) {
+      if (categoryId !== undefined) {
         whereClause = {
           ...whereClause,
-          categoryID: {
-            equals: categoryID
+          categoryId: {
+            equals: categoryId
           }
         }
       }
@@ -62,13 +62,13 @@ export const root = {
         include: { products: true }
       });
     },
-    createProduct: async ({ name, price, categoryID, stock }) => {
+    createProduct: async ({ name, price, categoryId, stock }) => {
       return await prisma.product.create({
         data: {
           name,
           price,
-          createAt: new Date(),
-          categoryID,
+          createdAt: new Date(),
+          categoryId,
           stock     
         },
         include: {

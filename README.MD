@@ -12,6 +12,16 @@
 * First, run the `npm install` on the root folder to install the dependencies of the project
 
 * Second, make sure modify the connection string in the `.env` file, take reference from the `.env.example` file and change it according to your database connection.
+  
+* Then, run the `npx prisma migrate dev`, this will migrate the schema from the prisma file and you will see a message on the terminal saying: 
+```bash
+migrations/
+    8328dk238d_<name>
+        migration.sql
+```
+> Notice that in the name tag it will appear the name that you gave to the migration.
+
+* You can add information directly to your database, or run `npx prisma studio` on another terminal and navigate to [`http://127.0.0.1:5555`](http://127.0.0.1:5555).
 
 * After that, run the `npm run dev` command to start
 
@@ -21,6 +31,8 @@ This is the windows that's supposed to be displayed:
 <p align="center">
     <img alt="Prisma Image" src="./images/QueryTesting.png" width="400" height="220" />
 </p>
+
+>Now try the queries from the next section and see how the data it's been displayed.
 
 
 ## ✨ Query's Testing
